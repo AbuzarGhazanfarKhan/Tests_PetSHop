@@ -484,8 +484,9 @@ WebDriver BiDi listening on ws://127.0.0.1:50742
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\92336\\AppData\\Local\\Temp\\rust_mozprofileB54Gcs\\search.json.mozlz4", (void 0)))
 DevTools listening on ws://127.0.0.1:50742/devtools/browser/da11144d-eac5-436c-ae6e-64b8bd33e152
 JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
-1:50763
-1673297900839	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50764" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\92336\\AppData\\Local\\Temp\\rust_mozprofileJOVt03"
+1673299926288	Marionette	INFO	Stopped listening on port 50751
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+" "localhost" "-no-remote" "-profile" "C:\\Users\\92336\\AppData\\Local\\Temp\\rust_mozprofileJOVt03"
 1673297901100	Marionette	INFO	Marionette enabled
 1673297901105	Marionette	INFO	Listening on port 50786
 WebDriver BiDi listening on ws://127.0.0.1:50764
@@ -494,3 +495,4 @@ Read port: 50786
 console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\92336\\AppData\\Local\\Temp\\rust_mozprofileJOVt03\\search.json.mozlz4", (void 0)))
 DevTools listening on ws://127.0.0.1:50764/devtools/browser/99f754de-e3cd-45e0-b759-54060689d6eb
 JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1673299927660	Marionette	INFO	Stopped listening on port 50786
