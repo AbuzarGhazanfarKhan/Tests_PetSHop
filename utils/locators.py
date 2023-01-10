@@ -25,7 +25,7 @@ class HomePageLocators(object):
 
 class LoginPageLocators(object):
     SIGNUP = (By.XPATH, '//*[@id="Catalog"]/a')
-    USERNAME = (By.ID, 'stripes-1782927696')
+    USERNAME = (By.XPATH, '//*[@id="stripes-1620867368"]')
     PASSWORD = (By.XPATH, '//*[@id="Catalog"]/form/p[2]/input[2]')
     LOGIN_BUTTON = (By.XPATH, '//*[@id="Catalog"]/form/input')
     ERROR_MESSAGE = (By.XPATH, '//*[@id="Content"]/ul/li/text()')
