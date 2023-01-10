@@ -11,41 +11,42 @@ class LoginPage(BasePage):
         self.base_url =  base_url
         self.driver   =  webdriver.Chrome()
         self.get_user =  getUser
+        
          # Python2 version
     
     def open_login_page(self):
         self.driver.get(self.base_url)
 
     def enter_username(self, username):
-        print(*self.locator.USERNAME,"************",username)
-        self.driver.find_element(By.XPATH, '//*[@id="stripes-1265403013"]').send_keys(username)
+        print("------------------------------------------",username)
+        self.driver.find_element(*self.locator.USERNAME).send_keys(username)
 
     def enter_password(self, password):
-        print(*self.locator.PASSWORD)
+        print("---------------------------------------------",password)
         self.driver.find_element(*self.locator.PASSWORD).send_keys(password)
 
     def click_login_button(self):
         self.open_login_page()
         self.driver.find_element(*self.locator.LOGIN_BUTTON).click()
         return self.driver.find_element(*self.locator.EMPTYFORM_MESSAGE).text
-
+    
     def login(self, user):
         self.open_login_page()
+        self.driver.find_element(*self.locator.PASSWORD).clear()#negative testcase
         user = self.get_user.get_user(user)
-        print("*****",user)
-        # self.driver.find_element(By.ID, 'stripes-1620867368').click()
-
-        # self.driver.find_element(By.ID, 'stripes-1620867368').send_keys("abcd")
+        print("*******************************************************************",user["name"])
         self.enter_username(user["name"])
         self.enter_password(user["password"])
-        time.sleep(5)
-        time.sleep(5)
-        self.click_login_button()
+        self.driver.find_element(*self.locator.LOGIN_BUTTON).click()
+        
 
     def login_with_valid_user(self, user):
         self.login(user)
 
     def login_with_in_valid_user(self, user):
+        print("******************",user)
         self.login(user)
+        time.sleep(2)
+        print(self.driver.find_element(*self.locator.ERROR_MESSAGE).text)
         return self.driver.find_element(*self.locator.ERROR_MESSAGE).text
 

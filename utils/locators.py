@@ -25,15 +25,35 @@ class HomePageLocators(object):
 
 class LoginPageLocators(object):
     SIGNUP = (By.XPATH, '//*[@id="Catalog"]/a')
-    USERNAME = (By.XPATH, '//*[@id="stripes-1620867368"]')
+    USERNAME = (By.XPATH, '/html/body/div[2]/div/form/p[2]/input[1]')
     PASSWORD = (By.XPATH, '//*[@id="Catalog"]/form/p[2]/input[2]')
     LOGIN_BUTTON = (By.XPATH, '//*[@id="Catalog"]/form/input')
-    ERROR_MESSAGE = (By.XPATH, '//*[@id="Content"]/ul/li/text()')
+    ERROR_MESSAGE = (By.XPATH, '/html/body/div[2]/ul/li')
     EMPTYFORM_MESSAGE = (By.XPATH,'//*[@id="Catalog"]/form/p[1]')
+    REGISTER = (By.XPATH,'/html/body/div[2]/div/a')
     
 
 class SignupPageLocators(object):
-    pass
+    
+    SIGNUP_BUTTON = (By.XPATH,'/html/body/div[2]/div/form/input')
+    USERID_FIELD = (By.XPATH,'/html/body/div[2]/div/form/table[1]/tbody/tr[1]/td[2]/input')
+    PASSWORD_FIELD = (By.XPATH,'/html/body/div[2]/div/form/table[1]/tbody/tr[2]/td[2]/input')
+    REPEAT_PASSWORD_FIELD = (By.XPATH,'/html/body/div[2]/div/form/table[1]/tbody/tr[3]/td[2]/input')
+    FIRST_NAME = (By.XPATH,'/html/body/div[2]/div/form/table[2]/tbody/tr[1]/td[2]/input')
+    LAST_NAME = (By.XPATH,'/html/body/div[2]/div/form/table[2]/tbody/tr[2]/td[2]/input')
+    EMAIL = (By.XPATH,'/html/body/div[2]/div/form/table[2]/tbody/tr[3]/td[2]/input')
+    PHONE = (By.XPATH,'/html/body/div[2]/div/form/table[2]/tbody/tr[4]/td[2]/input')
+    ADDRESS1 = (By.XPATH,'/html/body/div[2]/div/form/table[2]/tbody/tr[5]/td[2]/input')
+    ADDRESS2 = (By.XPATH,'/html/body/div[2]/div/form/table[2]/tbody/tr[6]/td[2]/input')
+    CITY = (By.XPATH,'/html/body/div[2]/div/form/table[2]/tbody/tr[7]/td[2]/input')
+    STATE = (By.XPATH,'/html/body/div[2]/div/form/table[2]/tbody/tr[8]/td[2]/input')
+    ZIP = (By.XPATH,'/html/body/div[2]/div/form/table[2]/tbody/tr[9]/td[2]/input')
+    COUNTRY = (By.XPATH,'/html/body/div[2]/div/form/table[2]/tbody/tr[10]/td[2]/input')
+    LANGUAGE_PREFERENCE = (By.XPATH,'/html/body/div[2]/div/form/table[3]/tbody/tr[1]/td[2]/select')
+    FAVOURITE_CATEGORY = (By.XPATH,'/html/body/div[2]/div/form/table[3]/tbody/tr[2]/td[2]/select')
+    ENABLE_MYLIST = (By.XPATH,'/html/body/div[2]/div/form/table[3]/tbody/tr[3]/td[2]/select')
+    ENABLE_MYBANNER = (By.XPATH,'/html/body/div[2]/div/form/table[3]/tbody/tr[4]/td[2]/input')
+    
 
 
 class ShoppingCartPage(object):

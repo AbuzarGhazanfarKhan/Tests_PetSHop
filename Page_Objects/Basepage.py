@@ -2,13 +2,14 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
+from selenium import webdriver
 
 
 # this Base class is serving basic attributes for every single page inherited from Page class
 class BasePage(object):
     def __init__(self, driver, base_url='https://petstore.octoperf.com/actions/Catalog.action'):
         self.base_url = base_url
-        self.driver = driver
+        self.driver   =  webdriver.Chrome()
         self.timeout = 30
 
     def find_element(self, *locator):

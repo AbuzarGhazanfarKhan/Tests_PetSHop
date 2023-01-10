@@ -1,6 +1,6 @@
 users = [
         {"name": "invalid_user", "email": "invalidUser@test.com", "password": "qwert1235"},
-        {"name": "11111", "password": "admin"},
+        {"name": "11111", "password": "admin"},#valid user
         {"name": "Staff2", "email": "staff@test.com", "password": "qwert1235"},
         {"name": "Admin0", "email": "admin@test.com", "password": "qwert1234"},
         {"name": "Admin1", "email": "admin@test.com", "password": "qwert1234"},
