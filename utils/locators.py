@@ -13,7 +13,7 @@ class HomePageLocators(object):
     LOGO = (By.XPATH, '//*[@id="LogoContent"]/a/img')
     # ACCOUNT = (By.ID, 'nav-link-accountList')
     LOGIN = (By.XPATH , '//*[@id="MenuContent"]/a[2]')
-    SEARCH = (By.NAME, 'keyword')
+    SEARCH = (By.XPATH, '/html/body/div[1]/div[3]/div/form/input[1]')
     NAVIGATE_TO_CATEGORY_PAGE_bird=(By.XPATH,CATEGORIES['bird'])
     NAVIGATE_TO_CATEGORY_PAGE_dog=(By.XPATH,CATEGORIES['dog'])
     NAVIGATE_TO_CATEGORY_PAGE_reptile=(By.XPATH,CATEGORIES['reptile'])
@@ -59,12 +59,31 @@ class SignupPageLocators(object):
     SIGN_OUT = (By.XPATH,'/html/body/div[1]/div[2]/div/a[2]')
 
 
-class ShoppingCartPage(object):
-    pass
-    # by_name_search=''
-    # by_name_submitButton="searchProducts"
-    # search_result='//*[@id="Catalog"]/table/tbody/tr[2]/td[3]'
+class ShoppingCartPageLocator(object):
+    CART_BUTTON=(By.XPATH,'//*[@id="MenuContent"]/a[1]')
+    UPDATE_CART=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[3]/td[1]/input')
+    ADD_TO_CART=(By.XPATH,'/html/body/div[2]/div[2]/table/tbody/tr[2]/td[5]/a')
+    CART_PAGE_TITLE=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/h2')
+    CART_EMPTY_MESSAGE=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[2]/td/b')
+    CART_PRODUCT_COUNT_INPUT_first=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[2]/td[5]/input')
+    CART_PRODUCT_COUNT_INPUT_02=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[3]/td[5]/input')
+    CART_REMOVE_PRODUCT_01=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[2]/td[8]/a')
+    CART_REMOVE_PRODUCT_02=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[3]/td[8]/a')
+    PRODUCT_LISTED_COST=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[2]/td[6]')
+    PRODUCT_TOTAL_COST_01_=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[2]/td[7]')
+    PRODUCT_TOTAL_COST_02=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[3]/td[7]')
+    CART_SUB_TOTAL=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[4]/td[1]/text()')
+    CART_TABLE=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody')
+    SEARCH_RESULT=(By.XPATH,'/html/body/div[2]/div[2]/table/tbody/tr[2]/td[1]/a')
+    SEARCH = (By.XPATH, '/html/body/div[1]/div[3]/div/form/input[1]')
+    SEARCH_BUTTON = (By.XPATH, '/html/body/div[1]/div[3]/div/form/input[2]')
+    PROCEED_TO_CHECKOUT=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/a')
+    PROCEED_TO_CHECKOUT_NOT_LOGGEDIN_MSG=(By.XPATH,'/html/body/div[2]/ul/li')
+    CHECKOUT_FORM_SUBMIT=(By.XPATH,'/html/body/div[2]/div/form/input')
+    CHECKOUT_CONFIRM_ORDER_SUBMIT=(By.XPATH,'/html/body/div[2]/div[2]/a')
+    CONFIRMED_ORDER_MSG=(By.XPATH,'/html/body/div[2]/ul/li')
 
 class CatogryPageLocator(object):
     
     CatogryPageTITLE=(By.XPATH,'//*[@id="Catalog"]/h2')#//*[@id="Catalog"]/h2
+    CATEGORY_PRODUCT=(By.XPATH,'/html/body/div[2]/div[2]/table/tbody/tr[2]/td[1]/a')

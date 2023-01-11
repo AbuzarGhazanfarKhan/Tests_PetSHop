@@ -28,6 +28,12 @@ class HomePage(BasePage):
         self.driver.find_element(*self.locator.SEARCH).send_keys(value)
         self.driver.find_element(*self.locator.SEARCH_BUTTON).click()
         return self.driver.find_element(*self.locator.SEARCH_RESULT).text
+
+    def search_helper(self):
+        self.open_home_page()
+        self.driver.find_element(*self.locator.SEARCH).send_keys("tiger")
+        self.driver.find_element(*self.locator.SEARCH_BUTTON).click()
+        # return self.driver.find_element(*self.locator.SEARCH_RESULT).text
     
     def navigate_to_category(self):
         self.open_home_page()
