@@ -66,7 +66,6 @@ class ShoppingCartPageLocator(object):
     CART_PRODUCT_COUNT_INPUT_02=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[3]/td[5]/input')
     CART_REMOVE_PRODUCT_01=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[2]/td[8]/a')
     CART_REMOVE_PRODUCT_02=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[3]/td[8]/a')
-    PROCEED_TO_CHECKOUT=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/a')
     PRODUCT_LISTED_COST=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[2]/td[6]')
     PRODUCT_TOTAL_COST_01_=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[2]/td[7]')
     PRODUCT_TOTAL_COST_02=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[3]/td[7]')
@@ -75,6 +74,11 @@ class ShoppingCartPageLocator(object):
     SEARCH_RESULT=(By.XPATH,'/html/body/div[2]/div[2]/table/tbody/tr[2]/td[1]/a')
     SEARCH = (By.XPATH, '/html/body/div[1]/div[3]/div/form/input[1]')
     SEARCH_BUTTON = (By.XPATH, '/html/body/div[1]/div[3]/div/form/input[2]')
+    PROCEED_TO_CHECKOUT=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/a')
+    PROCEED_TO_CHECKOUT_NOT_LOGGEDIN_MSG=(By.XPATH,'/html/body/div[2]/ul/li')
+    CHECKOUT_FORM_SUBMIT=(By.XPATH,'/html/body/div[2]/div/form/input')
+    CHECKOUT_CONFIRM_ORDER_SUBMIT=(By.XPATH,'/html/body/div[2]/div[2]/a')
+    CONFIRMED_ORDER_MSG=(By.XPATH,'/html/body/div[2]/ul/li')
 
 class CatogryPageLocator(object):
     

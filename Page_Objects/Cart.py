@@ -63,3 +63,21 @@ class CartPage(BasePage):
         self.driver.find_element(*self.locator.CART_REMOVE_PRODUCT_01).click()
         return  self.driver.find_element(*self.locator.CART_EMPTY_MESSAGE).text
  
+    def proceed_to_checkout(self):
+        self.driver.find_element(*self.locator.PROCEED_TO_CHECKOUT).click()
+
+    def proceed_to_checkout_when_not_loggedin(self):
+        self.proceed_to_checkout()
+        return self.driver.find_element(*self.locator.PROCEED_TO_CHECKOUT_NOT_LOGGEDIN_MSG).text
+
+    def login_after_checkout(self):
+        self.proceed_to_checkout()
+        return self.get_url()
+
+    def submit_checkout_form(self):
+        self.driver.find_element(*self.locator.CHECKOUT_FORM_SUBMIT).click()
+    def submit_order_confirmation(self):
+        self.driver.find_element(*self.locator.CHECKOUT_CONFIRM_ORDER_SUBMIT).click()
+    def generate_receipt(self):
+        self.driver.find_element(*self.locator.CONFIRMED_ORDER_MSG).text
+
