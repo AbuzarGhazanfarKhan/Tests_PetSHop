@@ -24,9 +24,8 @@ class SignUpPage(BasePage):
         result = self.driver.find_element(*self.locator.SIGNUP_BUTTON).click()
         return result
     
-    def form_filling(self,data):
-        print("*********************************************************",data['userId'])
-        self.driver.find_element(*self.locator.USERID_FIELD).send_keys(data['userId'])
+    def form_filling(self,data,id):
+        self.driver.find_element(*self.locator.USERID_FIELD).send_keys(id)
         self.driver.find_element(*self.locator.PASSWORD_FIELD).send_keys(data['password'])
         self.driver.find_element(*self.locator.REPEAT_PASSWORD_FIELD).send_keys(data['new_password'])
         self.driver.find_element(*self.locator.FIRST_NAME_FIELD).send_keys(data['first_name'])
@@ -53,21 +52,36 @@ class SignUpPage(BasePage):
     
     def userId_validation(self):
         self.open_signup_page()
-        self.form_filling(user1_for_userId_validation)
+        self.form_filling(user1_for_userId_validation,"1")
+        time.sleep(2)
         self.driver.find_element(*self.locator.SUBMIT).click()
         
-    def repeatPassword_validation(self):
+    def repeatPassword_validation(self,id):
         self.open_signup_page()
-        self.form_filling(user3_for_password_and_newPassword)
+        self.form_filling(user3_for_password_and_newPassword,id)
+        time.sleep(2)
         self.driver.find_element(*self.locator.SUBMIT).click()
     
-    def wrong_email_format_validation(self):
+    def wrong_email_format_validation(self,id):
         self.open_signup_page()
-        self.form_filling(user4_for_wrong_email_format)
+        self.form_filling(user4_for_wrong_email_format,id)
+        time.sleep(2)
         self.driver.find_element(*self.locator.SUBMIT).click()
 
-    def wrong_phone_number_validation(self):
+    def wrong_phone_number_validation(self,id):
         self.open_signup_page()
-        self.form_filling(user4_for_wrong_phone_number)
+        self.form_filling(user4_for_wrong_phone_number,id)
+        time.sleep(2)
         self.driver.find_element(*self.locator.SUBMIT).click()
-    
+
+    def submitting_form_with_empty_userID(self):
+        self.open_signup_page()
+        self.form_filling(user5_empty_userId,"")
+        time.sleep(2)
+        self.driver.find_element(*self.locator.SUBMIT).click()
+
+    def submitting_form_with_correct_data(self,id):
+        self.open_signup_page()
+        self.form_filling(user2_for_successfull_submission,id)
+        time.sleep(2)
+        self.driver.find_element(*self.locator.SUBMIT).click()

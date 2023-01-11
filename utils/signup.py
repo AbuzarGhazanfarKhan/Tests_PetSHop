@@ -1,4 +1,4 @@
-id = input('please insert USERID = ')
+
 user1_for_userId_validation = {#501
     "userId":'1',
     "password":"admin",
@@ -18,7 +18,6 @@ user1_for_userId_validation = {#501
 
 }
 user2_for_successfull_submission = {
-    "userId":id,
     "password":"admin",
     "new_password":"admin",
     "first_name":"admin",
@@ -36,7 +35,6 @@ user2_for_successfull_submission = {
     
 }
 user3_for_password_and_newPassword = {#no error
-    "userId":id,
     "password":"admin",
     "new_password":"adminS",
     "first_name":"admin",
@@ -54,7 +52,6 @@ user3_for_password_and_newPassword = {#no error
     
 }
 user4_for_wrong_email_format = {#no error
-    "userId":id,
     "password":"admin",
     "new_password":"admin",
     "first_name":"admin",
@@ -72,7 +69,25 @@ user4_for_wrong_email_format = {#no error
     
 }
 user4_for_wrong_phone_number = {#no error
-    "userId":id,
+    "password":"admin",
+    "new_password":"admin",
+    "first_name":"admin",
+    "last_name":"admin",
+    "email":"admin@gmail.com",
+    "phone":"9231",
+    "address1":"s-1/579",
+    "address2":"s-1/579",
+    "country":"pakistan",
+    "city":"karachi",
+    "state":"Sindh",
+    "zip":"75080",
+    "language_preference":"english",
+    "favourite_category":"FISH",
+    
+}
+
+user5_empty_userId = {#no error
+    "userId":"",
     "password":"admin",
     "new_password":"admin",
     "first_name":"admin",
