@@ -31,6 +31,8 @@ class LoginPageLocators(object):
     ERROR_MESSAGE = (By.XPATH, '/html/body/div[2]/ul/li')
     EMPTYFORM_MESSAGE = (By.XPATH,'//*[@id="Catalog"]/form/p[1]')
     REGISTER = (By.XPATH,'/html/body/div[2]/div/a')
+    MY_ACCOUNT = (By.XPATH,'/html/body/div[1]/div[2]/div/a[3]')
+    SIGN_IN_BUTTON = (By.XPATH,'/html/body/div[1]/div[2]/div/a[2]')
     
 
 class SignupPageLocators(object):
@@ -54,6 +56,7 @@ class SignupPageLocators(object):
     ENABLE_MYLIST_FIELD = (By.XPATH,'/html/body/div[2]/div/form/table[3]/tbody/tr[3]/td[2]/input')
     ENABLE_MYBANNER_FIELD = (By.XPATH,'/html/body/div[2]/div/form/table[3]/tbody/tr[4]/td[2]/input')
     SUBMIT = (By.XPATH,'/html/body/div[2]/div/form/input')
+    SIGN_OUT = (By.XPATH,'/html/body/div[1]/div[2]/div/a[2]')
 
 
 class ShoppingCartPage(object):

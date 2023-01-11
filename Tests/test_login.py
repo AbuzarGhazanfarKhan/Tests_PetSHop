@@ -29,3 +29,15 @@ class LoginTest(unittest.TestCase):
         result = main_page.login_with_in_valid_user("invalid_user")
         print("*******",result)
         self.assertIn("Invalid username or password. Signin failed", result) #Negative
+
+    def test_update_account(self):
+        print("\n" + str(test_cases(6)))
+        main_page = LoginPage()
+        main_page.update_account("11111")
+        self.assertIn("https://petstore.octoperf.com/actions/Account.action?editAccountForm=", main_page.get_url()) #Positive
+
+    def test_update_user_password(self):
+        print("\n" + str(test_cases(6)))
+        main_page = LoginPage()
+        main_page.update_user_password("11111")
+        self.assertIn("https://petstore.octoperf.com/actions/Catalog.action", main_page.get_url()) #Positive
