@@ -1,8 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import Select
 from Page_Objects.Basepage import BasePage
 from utils.locators import HomePageLocators,CatogryPageLocator,SignupPageLocators
+from utils.signup import *
 import time
 
 
@@ -12,6 +14,7 @@ class SignUpPage(BasePage):
         self.driver =  webdriver.Chrome()
         self.locator=SignupPageLocators
         self.timeout = 30
+        
     
     def open_signup_page(self):
         self.driver.get(self.base_url)
@@ -20,3 +23,40 @@ class SignUpPage(BasePage):
         self.open_signup_page()
         result = self.driver.find_element(*self.locator.SIGNUP_BUTTON).click()
         return result
+    
+    def form_filling(self,data):
+        # self.driver.find_element(*self.locator.USERID_FIELD).send_keys(data['userId'])
+        # self.driver.find_element(*self.locator.PASSWORD_FIELD).send_keys(data['password'])
+        # self.driver.find_element(*self.locator.REPEAT_PASSWORD_FIELD).send_keys(data['new_password'])
+        # self.driver.find_element(*self.locator.FIRST_NAME_FIELD).send_keys(data['first_name'])
+        # self.driver.find_element(*self.locator.LAST_NAME_FIELD).send_keys(data['last_name'])
+        # self.driver.find_element(*self.locator.EMAIL_FIELD).send_keys(data['email'])
+        # self.driver.find_element(*self.locator.PHONE_FIELD).send_keys(data['phone'])
+        # self.driver.find_element(*self.locator.ADDRESS1_FIELD).send_keys(data['address1'])
+        # self.driver.find_element(*self.locator.ADDRESS2_FIELD).send_keys(data['address2'])
+        # self.driver.find_element(*self.locator.COUNTRY_FIELD).send_keys(data['country'])
+        # self.driver.find_element(*self.locator.CITY_FIELD).send_keys(data['city'])
+        # self.driver.find_element(*self.locator.STATE_FIELD).send_keys(data['state'])
+        # self.driver.find_element(*self.locator.ZIP_FIELD).send_keys(data['zip'])
+        # self.driver.find_element(*self.locator.LANGUAGE_PREFERENCE_FIELD).send_keys(data['language_preference'])
+        language =  self.driver.find_element(*self.locator.FAVOURITE_CATEGORY_FIELD).send_keys(data['favourite_category'])
+        drop=Select(language).select_by_index(1)
+        print("*********************************************************************")
+        drop.select_by_visible_text('english')
+        category = self.driver.find_element(*self.locator.ENABLE_MYBANNER_FIELD).send_keys("1")
+        drop=Select(category)
+        drop.select_by_visible_text('FISH')
+        
+        # self.driver.find_element(*self.locator.ENABLE_MYLIST_FIELD).click()
+        # self.driver.find_element(*self.locator.ENABLE_MYBANNER_FIELD).click()
+
+    
+    def userId_validation(self):
+        self.open_signup_page()
+        
+        self.form_filling(user1_for_userId_validation)
+        self.driver.find_element(*self.locator.SUBMIT).click()
+        
+
+
+    

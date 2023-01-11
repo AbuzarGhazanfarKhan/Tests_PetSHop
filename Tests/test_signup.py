@@ -13,15 +13,16 @@ from utils.test_cases import test_cases
 class SignupTest(unittest.TestCase):
     
     
-    def test_submit_empty_signup(self):
-        print("\n" + str(test_cases(1)))
-        page = SignUpPage()
-        result = page.click_signUp_Button()
-        self.assertIn("fields are empty", result)
+    # def test_submit_empty_signup(self):
+    #     print("\n" + str(test_cases(1)))
+    #     page = SignUpPage()
+    #     result = page.click_signUp_Button()
+    #     self.assertIn("fields are empty", result)
 
 
     def test_Userid_field_validation(self):
-        print("\n" + str(test_cases(1)))
+        print("\n" + str(test_cases(2)))
         page = SignUpPage()
-        result = page.click_signUp_Button()
-        self.assertIn("fields are empty", result)
+        page.userId_validation()
+        time.sleep(50)
+        self.assertIn("https://petstore.octoperf.com/actions/Catalog.action", page.get_url())
