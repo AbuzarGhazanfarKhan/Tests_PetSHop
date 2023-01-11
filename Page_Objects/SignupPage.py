@@ -25,6 +25,7 @@ class SignUpPage(BasePage):
         return result
     
     def form_filling(self,data):
+        print("*********************************************************",data['userId'])
         self.driver.find_element(*self.locator.USERID_FIELD).send_keys(data['userId'])
         self.driver.find_element(*self.locator.PASSWORD_FIELD).send_keys(data['password'])
         self.driver.find_element(*self.locator.REPEAT_PASSWORD_FIELD).send_keys(data['new_password'])
@@ -55,6 +56,18 @@ class SignUpPage(BasePage):
         self.form_filling(user1_for_userId_validation)
         self.driver.find_element(*self.locator.SUBMIT).click()
         
+    def repeatPassword_validation(self):
+        self.open_signup_page()
+        self.form_filling(user3_for_password_and_newPassword)
+        self.driver.find_element(*self.locator.SUBMIT).click()
+    
+    def wrong_email_format_validation(self):
+        self.open_signup_page()
+        self.form_filling(user4_for_wrong_email_format)
+        self.driver.find_element(*self.locator.SUBMIT).click()
 
-
+    def wrong_phone_number_validation(self):
+        self.open_signup_page()
+        self.form_filling(user4_for_wrong_phone_number)
+        self.driver.find_element(*self.locator.SUBMIT).click()
     
