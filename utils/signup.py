@@ -1,4 +1,4 @@
-id = input('USERID')
+id = input('please insert USERID = ')
 user1_for_userId_validation = {#501
     "userId":'1',
     "password":"admin",

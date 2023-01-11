@@ -24,5 +24,4 @@ class SignupTest(unittest.TestCase):
         print("\n" + str(test_cases(2)))
         page = SignUpPage()
         page.userId_validation()
-        time.sleep(50)
         self.assertIn("https://petstore.octoperf.com/actions/Catalog.action", page.get_url())

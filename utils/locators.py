@@ -51,7 +51,7 @@ class SignupPageLocators(object):
     COUNTRY_FIELD = (By.XPATH,'/html/body/div[2]/div/form/table[2]/tbody/tr[10]/td[2]/input')
     LANGUAGE_PREFERENCE_FIELD = (By.XPATH,'/html/body/div[2]/div/form/table[3]/tbody/tr[1]/td[2]/select')
     FAVOURITE_CATEGORY_FIELD = (By.XPATH,'/html/body/div[2]/div/form/table[3]/tbody/tr[2]/td[2]/select')
-    ENABLE_MYLIST_FIELD = (By.XPATH,'/html/body/div[2]/div/form/table[3]/tbody/tr[3]/td[2]/select')
+    ENABLE_MYLIST_FIELD = (By.XPATH,'/html/body/div[2]/div/form/table[3]/tbody/tr[3]/td[2]/input')
     ENABLE_MYBANNER_FIELD = (By.XPATH,'/html/body/div[2]/div/form/table[3]/tbody/tr[4]/td[2]/input')
     SUBMIT = (By.XPATH,'/html/body/div[2]/div/form/input')
 
