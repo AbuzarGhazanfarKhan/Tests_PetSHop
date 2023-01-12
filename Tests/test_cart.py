@@ -1,5 +1,6 @@
 # from selenium import webdriver
 import time
+
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from Page_Objects.Homepage import HomePage
@@ -66,6 +67,8 @@ class CartTest(unittest.TestCase):
         page.add_to_cart()
         result=page.remove_from_cart()
         self.assertIn("Your cart is empty.", result)
+
+        
     #positive
     def test_proceed_to_checkout_when_not_loggedin(self):
         print("\n" + str(test_cases(20)))
@@ -92,10 +95,10 @@ class CartTest(unittest.TestCase):
     #positive
     def test_login_then_proceed_to_check_out(self):
         print("\n" + str(test_cases(22)))
-        login_page = LoginPage()
         page = CartPage()
         page.open()
-        login_page.login_with_valid_user("11111")
+        page.navigate_signin_page()
+        page.login("11111")
         page.search("Tiger")
         page.click_on_searched_item()
         page.add_to_cart()

@@ -73,7 +73,7 @@ class ShoppingCartPageLocator(object):
     PRODUCT_LISTED_COST=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[2]/td[6]')
     PRODUCT_TOTAL_COST_01_=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[2]/td[7]')
     PRODUCT_TOTAL_COST_02=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[3]/td[7]')
-    CART_SUB_TOTAL=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[4]/td[1]/text()')
+    CART_SUB_TOTAL=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[3]/td[1]')
     CART_TABLE=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody')
     SEARCH_RESULT=(By.XPATH,'/html/body/div[2]/div[2]/table/tbody/tr[2]/td[1]/a')
     SEARCH = (By.XPATH, '/html/body/div[1]/div[3]/div/form/input[1]')
@@ -83,6 +83,7 @@ class ShoppingCartPageLocator(object):
     CHECKOUT_FORM_SUBMIT=(By.XPATH,'/html/body/div[2]/div/form/input')
     CHECKOUT_CONFIRM_ORDER_SUBMIT=(By.XPATH,'/html/body/div[2]/div[2]/a')
     CONFIRMED_ORDER_MSG=(By.XPATH,'/html/body/div[2]/ul/li')
+    
 
 class CatogryPageLocator(object):
     

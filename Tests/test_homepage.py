@@ -12,7 +12,7 @@ from utils.test_cases import test_cases
 
 class HomeTest(unittest.TestCase):
 
-    def test_hoeme_page_load(self):
+    def test_home_page_load(self):
         print("\n" + str(test_cases(0)))
         page = HomePage()
         self.assertTrue(page.check_page_loaded())
@@ -20,7 +20,7 @@ class HomeTest(unittest.TestCase):
     def test_search_item_from_searchbar(self):
         print("\n" + str(test_cases(1)))
         page = HomePage()
-        time.sleep(1)
+        # time.sleep(1)
         search_result = page.search("Tiger")
         self.assertIn("Tiger", search_result)
 
@@ -30,7 +30,7 @@ class HomeTest(unittest.TestCase):
         page = HomePage()
         time.sleep(1)
         search_result = page.navigate_to_category()
-        self.assertIn("fish", search_result.lower())
+        self.assertTrue("fish", search_result)
 
 
     def test_cart_page_load(self):

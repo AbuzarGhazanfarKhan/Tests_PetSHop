@@ -1,12 +1,10 @@
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support.ui import Select
+from utils.users import *
 from Page_Objects.Basepage import BasePage
-from utils.locators import HomePageLocators,CatogryPageLocator,SignupPageLocators,ShoppingCartPageLocator
+from utils.locators import HomePageLocators,ShoppingCartPageLocator,LoginPageLocators
 from utils.signup import *
-import time
-
 
 class CartPage(BasePage):
     def __init__(self, base_url='https://petstore.octoperf.com/actions/Catalog.action'):
@@ -14,9 +12,10 @@ class CartPage(BasePage):
         self.driver =  webdriver.Chrome()
         self.locator=ShoppingCartPageLocator
         self.home_locator=HomePageLocators
+        self.login_locator=LoginPageLocators
+        self.get_user =  getUser
         self.timeout = 30
         
-    
     def open(self):
         self.driver.get(self.base_url)
 
@@ -62,7 +61,26 @@ class CartPage(BasePage):
     def remove_from_cart(self):
         self.driver.find_element(*self.locator.CART_REMOVE_PRODUCT_01).click()
         return  self.driver.find_element(*self.locator.CART_EMPTY_MESSAGE).text
- 
+
+    def navigate_signin_page(self):
+        self.driver.find_element(*self.login_locator.SIGN_IN_BUTTON).click()
+
+    def enter_username(self, username):
+        print("------------------------------------------",username)
+        self.driver.find_element(*self.login_locator.USERNAME).send_keys(username)
+
+    def enter_password(self, password):
+        print("---------------------------------------------",password)
+        self.driver.find_element(*self.login_locator.PASSWORD).send_keys(password)
+
+    def login(self, user):
+        self.driver.find_element(*self.login_locator.PASSWORD).clear()#negative testcase
+        user = self.get_user.get_user(user)
+        print("*******************************************************************",user["name"])
+        self.enter_username(user["name"])
+        self.enter_password(user["password"])
+        self.driver.find_element(*self.login_locator.LOGIN_BUTTON).click()
+
     def proceed_to_checkout(self):
         self.driver.find_element(*self.locator.PROCEED_TO_CHECKOUT).click()
 
@@ -76,8 +94,12 @@ class CartPage(BasePage):
 
     def submit_checkout_form(self):
         self.driver.find_element(*self.locator.CHECKOUT_FORM_SUBMIT).click()
-    def submit_order_confirmation(self):
-        self.driver.find_element(*self.locator.CHECKOUT_CONFIRM_ORDER_SUBMIT).click()
-    def generate_receipt(self):
-        self.driver.find_element(*self.locator.CONFIRMED_ORDER_MSG).text
 
+    def submit_order_confirmation(self):
+        time.sleep(5)
+        print("=================reached Confirm=================")
+        self.driver.find_element(*self.locator.CHECKOUT_CONFIRM_ORDER_SUBMIT).click()
+        # print(self.driver.find_element(*self.locator.CHECKOUT_CONFIRM_ORDER_SUBMIT).text)
+        
+    def generate_receipt(self):
+       return self.driver.find_element(*self.locator.CONFIRMED_ORDER_MSG).text
