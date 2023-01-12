@@ -17,24 +17,34 @@ class HomeTest(unittest.TestCase):
         page = HomePage()
         self.assertTrue(page.check_page_loaded())
 
-    def test_cart_page_load(self):
-        print("\n" + str(test_cases(0)))
-        page = HomePage()
-        self.assertTrue(page.navigate_cart_page())
-
-    def test_search_item(self):
+    def test_search_item_from_searchbar(self):
         print("\n" + str(test_cases(1)))
         page = HomePage()
         time.sleep(1)
         search_result = page.search("Tiger")
         self.assertIn("Tiger", search_result)
 
-    def test_category(self):
+
+    def test_category_page(self):
         print("\n" + str(test_cases(2)))
         page = HomePage()
         time.sleep(1)
         search_result = page.navigate_to_category()
         self.assertIn("fish", search_result.lower())
+
+
+    def test_cart_page_load(self):
+        print("\n" + str(test_cases(3)))
+        page = HomePage()
+        self.assertTrue(page.navigate_cart_page())
+        
+
+    def test_signin_page_load(self):
+        print("\n" + str(test_cases(4)))
+        page = HomePage()
+        self.assertTrue(page.navigate_signin_page())
+
+
 
 
 

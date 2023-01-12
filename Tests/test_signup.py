@@ -13,7 +13,7 @@ id = int(input('please insert USERID = '))
 class SignupTest(unittest.TestCase):
     # positive
     def test_submit_empty_signup(self):
-        print("\n" + str(test_cases(1)))
+        print("\n" + str(test_cases(9)))
         page = SignUpPage()
         page.click_signUp_Button()
         self.assertIn("https://petstore.octoperf.com/actions/Account.action", page.get_url())

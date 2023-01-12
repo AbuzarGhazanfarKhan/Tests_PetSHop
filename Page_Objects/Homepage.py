@@ -41,12 +41,13 @@ class HomePage(BasePage):
     def navigate_to_category(self):
         self.open_home_page()
         self.driver.find_element(*self.locator.NAVIGATE_TO_CATEGORY_PAGE_fish).click()
-        return self.driver.find_element(*self.categoryLocator.CatogryPageTITLE).text
+        # return self.driver.find_element(*self.categoryLocator.CatogryPageTITLE).text
+        return True if self.driver.find_element(*self.categoryLocator.CatogryPageTITLE).text else False
 
 
     def navigate_cart_page(self):
         self.driver.find_element(*self.cartLocator.CART_BUTTON).click()
-        return self.driver.find_element(*self.cartLocator.CART_PAGE_TITLE).text
+        return True if self.driver.find_element(*self.cartLocator.CART_PAGE_TITLE).text else False
 
 
     def navigate_signin_page(self):

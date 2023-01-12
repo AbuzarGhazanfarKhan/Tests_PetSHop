@@ -14,19 +14,27 @@ from utils.test_cases import test_cases
 class CartTest(unittest.TestCase):
 # positive
     def test_navigate_to_cart_page(self):
-        print("\n" + str(test_cases(1)))
-
+        print("\n" + str(test_cases(16)))
         page = CartPage()
         page.open()
         result=page.click_cart_Button()
         self.assertIn("Shopping Cart", result)
 #positive
     def test_check_empty_cart(self):
-        print("\n" + str(test_cases(1)))
+        print("\n" + str(test_cases(23)))
         page = CartPage()
         page.open()
         result=page.check_empty_cart()
         self.assertIn("Your cart is empty.", result)
+    
+    def test_check_subtotal_in_cart_when_empty(self):
+        print("\n" + str(test_cases(17)))
+        page = CartPage()
+        page.open()
+        page.check_empty_cart()
+        result=page.get_subTotal()
+        self.assertIn("Sub Total: $0.00", result)
+
 #Postive
     def test_add_product_to_cart(self):
         print("\n" + str(test_cases(1)))
@@ -35,7 +43,7 @@ class CartTest(unittest.TestCase):
         page.search("Tiger")
         page.click_on_searched_item()
         page.add_to_cart()
-        updated_prices= page.update_cart(2)
+        updated_prices= page.update_cart(18)
         print(updated_prices)
         self.assertEqual(True,updated_prices)
 
@@ -50,7 +58,7 @@ class CartTest(unittest.TestCase):
         # self.assertIn("Shopping Cart", result)
 
     def test_remove_item(self):
-        print("\n" + str(test_cases(1)))
+        print("\n" + str(test_cases(19)))
         page = CartPage()
         page.open()
         page.search("Tiger")
@@ -60,7 +68,7 @@ class CartTest(unittest.TestCase):
         self.assertIn("Your cart is empty.", result)
     #positive
     def test_proceed_to_checkout_when_not_loggedin(self):
-        print("\n" + str(test_cases(1)))
+        print("\n" + str(test_cases(20)))
         page = CartPage()
         page.open()
         page.search("Tiger")
@@ -72,7 +80,7 @@ class CartTest(unittest.TestCase):
 
     #negative
     def test_proceed_to_checkout_then_login(self):
-        print("\n" + str(test_cases(1)))
+        print("\n" + str(test_cases(21)))
         page = CartPage()
         page.open()
         page.search("Tiger")
@@ -83,7 +91,7 @@ class CartTest(unittest.TestCase):
    
     #positive
     def test_login_then_proceed_to_check_out(self):
-        print("\n" + str(test_cases(4)))
+        print("\n" + str(test_cases(22)))
         login_page = LoginPage()
         page = CartPage()
         page.open()
@@ -95,5 +103,4 @@ class CartTest(unittest.TestCase):
         page.submit_checkout_form()
         page.submit_order_confirmation()
         result=page.generate_receipt()
-
         self.assertIn("Thank you, your order has been submitted.", result)
