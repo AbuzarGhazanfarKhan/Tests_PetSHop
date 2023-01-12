@@ -46,11 +46,13 @@ class HomePage(BasePage):
 
 
     def navigate_cart_page(self):
+        self.open_home_page()
         self.driver.find_element(*self.cartLocator.CART_BUTTON).click()
         return True if self.driver.find_element(*self.cartLocator.CART_PAGE_TITLE).text else False
 
 
     def navigate_signin_page(self):
+        self.open_home_page()
         self.driver.find_element(*self.loginLocator.SIGN_IN_BUTTON).click()
         return self.driver.find_element(*self.loginLocator.EMPTYFORM_MESSAGE).text
 

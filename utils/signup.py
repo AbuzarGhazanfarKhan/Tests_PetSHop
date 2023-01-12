@@ -30,7 +30,7 @@ user2_for_successfull_submission = {
     "city":"karachi",
     "state":"Sindh",
     "zip":"75080",
-    "language_preference":"english",
+    "language_preference":"japanese",
     "favourite_category":"FISH",
     
 }
@@ -48,7 +48,7 @@ user3_for_password_and_newPassword = {#no error
     "state":"Sindh",
     "zip":"75080",
     "language_preference":"english",
-    "favourite_category":"FISH",
+    "favourite_category":"DOGS",
     
 }
 user4_for_wrong_email_format = {#no error
@@ -65,7 +65,7 @@ user4_for_wrong_email_format = {#no error
     "state":"Sindh",
     "zip":"75080",
     "language_preference":"english",
-    "favourite_category":"FISH",
+    "favourite_category":"BIRDS",
     
 }
 user4_for_wrong_phone_number = {#no error

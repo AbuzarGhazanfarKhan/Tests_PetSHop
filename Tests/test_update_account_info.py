@@ -8,15 +8,15 @@ import unittest
 from utils.test_cases import test_cases
 
 class UpdateAccountInfo(unittest.TestCase):  
-
+#Positive
     def test_update_account(self):
         print("\n" + str(test_cases(23)))
         main_page = LoginPage()
         main_page.update_account("11111")
-        self.assertIn("https://petstore.octoperf.com/actions/Account.action?editAccountForm=", main_page.get_url()) #Positive
-
+        self.assertIn("https://petstore.octoperf.com/actions/Account.action?editAccountForm=", main_page.get_url()) 
+#NEGATIVE
     def test_update_user_password(self):
         print("\n" + str(test_cases(24)))
         main_page = LoginPage()
         main_page.update_user_password("11111")
-        self.assertIn("https://petstore.octoperf.com/actions/Catalog.action", main_page.get_url()) #Positive
+        self.assertIn("https://petstore.octoperf.com/actions/Catalog.action", main_page.get_url()) 
