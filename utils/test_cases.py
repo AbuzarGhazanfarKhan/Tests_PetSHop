@@ -27,6 +27,6 @@ testCases = [
     ['TEST_23_Cart_TEST#06', 'In Shopping Cart Page, Proceed to checkout should navigate to loggin page if not loggedin and after logging in should be redirected to order confirmation'],#..21
     ['TEST_24_Cart_TEST#07', 'Logged in user should smoothly add product to cart , proceed to check out and recieve order receipt'],#..22
     ['TEST_25_Cart_TEST#02', 'In Shopping Cart Page, Cart Should be empty for first User'],#..23
-    ['TEST_26_Update_Acoount_Info_TEST#07', 'Logged in user should smoothly add product to update_Acoount_Info , proceed to check out and recieve order receipt'],#..24
-    ['TEST_27_Update_Acoount_Info_TEST#07', 'Logged in user should smoothly add product to cart , proceed to check out and recieve order receipt'],#..25
+    ['TEST_26_Update_Acoount_Info_TEST#07', 'when user clicks on the My-_account button it should navigate to update form'],#..24
+    ['TEST_27_Update_Acoount_Info_TEST#07', 'when user update password then user should be able to login with the update password'],#..25
 ]
