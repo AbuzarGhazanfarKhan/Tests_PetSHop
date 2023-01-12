@@ -61,7 +61,7 @@ class SignupPageLocators(object):
 
 
 class ShoppingCartPageLocator(object):
-    CART_BUTTON=(By.XPATH,'//*[@id="MenuContent"]/a[1]')
+    CART_BUTTON=(By.XPATH,'/html/body/div[1]/div[2]/div/a[1]')
     UPDATE_CART=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/form/table/tbody/tr[3]/td[1]/input')
     ADD_TO_CART=(By.XPATH,'/html/body/div[2]/div[2]/table/tbody/tr[2]/td[5]/a')
     CART_PAGE_TITLE=(By.XPATH,'/html/body/div[2]/div[2]/div[1]/h2')
