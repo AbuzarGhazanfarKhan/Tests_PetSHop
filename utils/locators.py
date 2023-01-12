@@ -23,6 +23,7 @@ class HomePageLocators(object):
     SEARCH_RESULT = (By.XPATH, '//*[@id="Catalog"]/table/tbody/tr[2]/td[3]')
 
 
+
 class LoginPageLocators(object):
     SIGNUP = (By.XPATH, '//*[@id="Catalog"]/a')
     USERNAME = (By.XPATH, '/html/body/div[2]/div/form/p[2]/input[1]')

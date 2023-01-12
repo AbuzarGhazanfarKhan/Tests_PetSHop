@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from Page_Objects.Basepage import BasePage
-from utils.locators import HomePageLocators,CatogryPageLocator
+from utils.locators import HomePageLocators,CatogryPageLocator,ShoppingCartPageLocator,LoginPageLocators
 import time
 
 
@@ -13,11 +13,14 @@ class HomePage(BasePage):
         self.driver =  webdriver.Chrome()
         self.locator=HomePageLocators
         self.categoryLocator = CatogryPageLocator
+        self.cartLocator = ShoppingCartPageLocator
+        self.loginLocator = LoginPageLocators
         self.timeout = 30
 
     def check_page_loaded(self):
         self.open_home_page()
         return True if self.driver.find_element(*self.locator.LOGO) else False
+        
 
     def open_home_page(self):
         self.driver.get(self.base_url)
@@ -39,5 +42,17 @@ class HomePage(BasePage):
         self.open_home_page()
         self.driver.find_element(*self.locator.NAVIGATE_TO_CATEGORY_PAGE_fish).click()
         return self.driver.find_element(*self.categoryLocator.CatogryPageTITLE).text
+
+
+    def navigate_cart_page(self):
+        self.driver.find_element(*self.cartLocator.CART_BUTTON).click()
+        return self.driver.find_element(*self.cartLocator.CART_PAGE_TITLE).text
+
+
+    def navigate_signin_page(self):
+        self.driver.find_element(*self.loginLocator.SIGN_IN_BUTTON).click()
+        return self.driver.find_element(*self.loginLocator.EMPTYFORM_MESSAGE).text
+
+      
     def quit(self):
         self.driver.quit()

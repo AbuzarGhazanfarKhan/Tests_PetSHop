@@ -12,10 +12,15 @@ from utils.test_cases import test_cases
 
 class HomeTest(unittest.TestCase):
 
-    def test_page_load(self):
+    def test_hoeme_page_load(self):
         print("\n" + str(test_cases(0)))
         page = HomePage()
         self.assertTrue(page.check_page_loaded())
+
+    def test_cart_page_load(self):
+        print("\n" + str(test_cases(0)))
+        page = HomePage()
+        self.assertTrue(page.navigate_cart_page())
 
     def test_search_item(self):
         print("\n" + str(test_cases(1)))
